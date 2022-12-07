@@ -57,6 +57,7 @@ post_image = [
     )
 end
 puts "Posts created successfully!"
+
 # Create Comments
 puts "Creating Comments"
 puts "Comments created successfully!"
