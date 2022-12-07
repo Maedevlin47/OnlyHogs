@@ -1,11 +1,15 @@
 import React from "react";
-import './App.css';
+import './components/App.css';
+import Home from "./components/Home";
+// import NavBar from "./components/NavBar";
 
 function App() {
+
   return (
-    fetch("http://localhost:9292/allposts")
-  .then((r) => r.json())
-  .then((data) => console.log(data))
+    <div>
+    {/* <NavBar/> */}
+    <Home />
+    </div>
   )
 }
 
