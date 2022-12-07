@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-function HogPost () {
+function HogPost ({addHog}) {
     const [username, setUsername] = useState('')
     const [imageURL, setImageURL] = useState('')
     const [caption, setCaption] = useState('')
