@@ -3,7 +3,7 @@ import HogCard from './HogCard';
 function HogContainer({hogs}){
 
     return(
-        <div>
+        <div className='card_container'>
             {
             hogs.map(hog => <HogCard key={hog.id} hog={hog}/>)
             }
