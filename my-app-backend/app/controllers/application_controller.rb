@@ -2,6 +2,8 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
+
+  # GET REQUESTS
   get "/" do
     { message: "Good luck with your project!" }.to_json
   end
@@ -10,6 +12,18 @@ class ApplicationController < Sinatra::Base
     allposts = Post.all
     allposts.to_json
   end
+
+  get "/posts/:id" do
+    post = Post.find (params[:id])
+    post.to_json
+  end
+
+#POST REQUESTS
+
+#PATCH REQUESTS
+
+#DELETE REQUESTS
+
 
   # def get_secret_key
   #   "123"
