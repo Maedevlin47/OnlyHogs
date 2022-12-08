@@ -53,12 +53,16 @@ post_image = [
     Post.create(
         image: post_image.sample,
         caption: Faker::Quote.most_interesting_man_in_the_world,
-        username: User.all.sample.username
+        username: User.all.sample.username,
+        likes: rand(1..500)
     )
 end
 puts "Posts created successfully!"
 
 # Create Comments
 puts "Creating Comments"
+Comment.create(
+    likes: rand(1..100)
+)
 puts "Comments created successfully!"
 puts ":white_check_mark: Done seeding!"

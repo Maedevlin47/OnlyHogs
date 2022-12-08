@@ -3,24 +3,14 @@ class CreateComments < ActiveRecord::Migration[6.1]
     create_table :comments do |t|
       t.string :comment
       t.string :username
+      t.integer :likes
       t.integer :user_id
       t.integer :post_id
       t.timestamps
     end
   end
-end N  N 
+end
 
-    
-
-
-
-     N 
- N 
-
-    
-
-
-    
 
 
 

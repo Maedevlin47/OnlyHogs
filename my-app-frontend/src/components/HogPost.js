@@ -13,7 +13,7 @@ function HogPost ({addHog}) {
             image: image,
             caption: caption
         }
-        fetch("localhost:9292/posts", {
+        fetch("http://localhost:9292/posts", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(newHog)
@@ -28,7 +28,7 @@ function HogPost ({addHog}) {
             <input type="text" name="username" placeholder="Username" value = {username} onChange ={(e) => setUsername(e.target.value)}/>
             <input type="text" name="image" placeholder="Image" value = {image} onChange ={(e) => setImage(e.target.value)}/>
             <input type="text" name="caption" placeholder="Caption" value = {caption} onChange ={(e) => setCaption(e.target.value)}/>
-            <button type="submit">Add Pig</button>
+            <button type="submit" value="Add Pig">Add Pig</button>
             </form>
         </div>
         
