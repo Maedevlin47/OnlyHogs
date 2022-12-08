@@ -15,12 +15,7 @@ class ApplicationController < Sinatra::Base
     post.to_json(include: :comments)
 
   end
-  #comments how?!?!
-  # get '/posts/:id' do
-  #   comments = Comment.find(params[:id]) 
-  #   comments.to_json
-  # end
-
+  
 #POST REQUESTS
   post "/posts" do
   #binding.pry

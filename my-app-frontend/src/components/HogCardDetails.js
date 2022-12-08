@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import OinkButton from "./OinkButton.png";
 import userpic from "./userpic.png"
-// import HogComments from "./HogComments"
+import HogComments from "./HogComments"
 
 
 
@@ -63,7 +63,7 @@ function HogCardDetails() {
                 <h3>{hogCard.caption}</h3>
             </div>
             <div>
-                {/* <HogComments hogCard = {hogCard} addComment = {addComment} /> */}
+                <HogComments hogCard = {hogCard} />
             </div>
         </div>
     )

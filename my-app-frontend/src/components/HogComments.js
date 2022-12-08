@@ -6,6 +6,18 @@ function HogComments({hogCard, addComment}){
     const [username, setUsername] = useState("")
     const [comment, setComment] = useState("")
 
+
+    const commentsArray= hogCard.comments.map((comment) => {
+
+return(
+    <div key={comment.id}>
+        <ul>{comment.comments}</ul>
+    </div>
+
+)
+})
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
         let newComment = {
@@ -22,13 +34,19 @@ function HogComments({hogCard, addComment}){
         .then( () => addComment(newComment))
     }
     return (
-        <div className='new-hog-form'>
-            <h2>Post a Pig</h2>
-            <form onSubmit = {handleSubmit}>
-            <input type="text" name="username" placeholder="Username" value = {username} onChange ={(e) => setUsername(e.target.value)}/>
-            <input type="text" name="comment" placeholder="comment" value = {comment} onChange ={(e) => setComment(e.target.value)}/>
-            <button type="submit" value="Add Pig">Add Pig</button>
-            </form>
+        <div>
+            <div>
+                <h4>COMMENT SECTION</h4>
+                {commentsArray}
+            </div>
+            <div className='new-hog-form'>
+                <h2>Add Comment</h2>
+                <form onSubmit = {handleSubmit}>
+                <input type="text" name="username" placeholder="Username" value = {username} onChange ={(e) => setUsername(e.target.value)}/>
+                <input type="text" name="comment" placeholder="comment" value = {comment} onChange ={(e) => setComment(e.target.value)}/>
+                <button type="submit" value="Add Comment">Add Comment</button>
+                </form>
+            </div>
         </div>
         
     ) 
@@ -41,9 +59,9 @@ export default HogComments;
 // const commentsArray= hogCard.comments.map((comment) => {
 
 // return(
-//     <div key={comment.id}>
-//         <ul>{comment.comments}</ul>
-//     </div>
+    // <div key={comment.id}>
+    //     <ul>{comment.comments}</ul>
+    // </div>
 
 // )
 // })
