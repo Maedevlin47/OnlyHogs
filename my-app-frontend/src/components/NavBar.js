@@ -2,7 +2,7 @@
 import OnlyHogsLogo from "./OnlyHogsLogo.png";
 import {NavLink} from 'react-router-dom'; 
 
-function NavBar({addHog}) {
+function NavBar() {
 
     return(
         <div>
