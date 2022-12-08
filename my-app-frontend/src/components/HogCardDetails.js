@@ -24,8 +24,15 @@ function HogCardDetails() {
             setHogCard({...data})
         })
     },[id])
+    console.log(hogCard)
+    // const commentsArray= hogCard.comments.map((comment) => {
+    //     return(
+    //         <div key={comment.id}>
+    //             <ul>{comment.comments}</ul>
+    //         </div>
 
-        
+    //     )
+    // })
 
     const handleOinks = () => {
 
@@ -59,7 +66,7 @@ function HogCardDetails() {
         </div>
             <div>
                 <h4>Comments Section</h4>
-                
+                {/* {commentsArray} */}
             </div>
         </div>
     )
