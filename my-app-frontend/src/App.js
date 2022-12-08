@@ -9,6 +9,7 @@ import HogCardDetails from "./components/HogCardDetails";
 function App() {
 
     const addHog = (newHog) => {setHogs([...hogs, newHog])};
+	
     
 
 	const [hogs, setHogs] = useState([]);
