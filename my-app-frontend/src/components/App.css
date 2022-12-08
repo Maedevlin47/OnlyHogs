@@ -104,3 +104,16 @@
   transition: 0s;
   transform: translate(0, 5%);
 }
+
+.detail_image {
+  justify-content: center;
+  width: 60%;
+}
+.Oink{
+  width: 40px;
+}
+.userpic{
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}

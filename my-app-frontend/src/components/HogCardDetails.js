@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from "react-router-dom";
 import OinkButton from "./OinkButton.png";
+import userpic from "./userpic.png"
+
 
 
 function HogCardDetails() {
@@ -23,6 +25,7 @@ function HogCardDetails() {
         })
     },[id])
 
+        
 
     const handleOinks = () => {
 
@@ -47,14 +50,15 @@ function HogCardDetails() {
     return (
         <div>
         <div className='Post'>
-            <h3>{hogCard.username}</h3>
+            <img className= 'userpic' src = {userpic} alt={hogCard.username}/>
+            <h2>{hogCard.username}</h2>
             <button onClick={handleOinks}><img className="Oink" src={OinkButton} alt="OinkButton"/></button>
-            <h6>{hogCard.likes} OINKS</h6>
-            <img src={hogCard.image} alt={hogCard.username} />
-            <h5>{hogCard.caption}</h5>
+            <h5>{hogCard.likes} OINKS</h5>
+            <img className= 'detail_image' src={hogCard.image} alt={hogCard.username} />
+            <h3>{hogCard.caption}</h3>
         </div>
             <div>
-                <h3>Comments Section</h3>
+                <h4>Comments Section</h4>
                 
             </div>
         </div>
