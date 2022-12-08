@@ -8,4 +8,20 @@ class CreateComments < ActiveRecord::Migration[6.1]
       t.timestamps
     end
   end
-end
+end N  N 
+
+    
+
+
+
+     N 
+ N 
+
+    
+
+
+    
+
+
+
+

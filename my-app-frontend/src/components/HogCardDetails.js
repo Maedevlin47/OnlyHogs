@@ -12,7 +12,7 @@ function HogCardDetails(){
         fetch(`http://localhost:9292/posts/${id}`)
         .then(response => response.json())
         .then(data => setHogCard(data))
-    },[])
+    },[id])
 
     const {username, image, caption}= hogCard;
 
@@ -23,7 +23,9 @@ function HogCardDetails(){
             <img src={image} alt={username} />
             <h5>{caption}</h5>
         </div>
-        <div></div>
+            <div>
+                
+            </div>
         </div>
     )
 }

@@ -4,26 +4,34 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
 
   # GET REQUESTS
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
-  end
 
-  get "/allposts" do 
+  get "/posts" do 
     allposts = Post.all
     allposts.to_json
   end
 
   get "/posts/:id" do
-    post = Post.find (params[:id])
+    post = Post.find(params[:id])
     post.to_json
   end
 
 #POST REQUESTS
+  post "/posts" do
+  #binding.pry
+    Post.create(username: params[:username], image: params[:image], caption: params[:caption]).to_json
+  end
 
 #PATCH REQUESTS
+patch "/posts/:id" do
+    binding.pry
+    Post.find(params[:id])
+    Post.update(username: params[:username], image: params[:image], caption: params[:caption]).to_json
+end
 
 #DELETE REQUESTS
-
+delete "/posts/:id" do 
+  Post.find(params[:id]).destroy.to_json
+end
 
   # def get_secret_key
   #   "123"

@@ -14,7 +14,7 @@ function App() {
 	const [hogs, setHogs] = useState([]);
 	
 	useEffect( () => {
-		fetch("http://localhost:9292/allposts")
+		fetch("http://localhost:9292/posts")
 		.then ( r => r.json() )
 		.then ( data => setHogs(data) )
 	}, [])
