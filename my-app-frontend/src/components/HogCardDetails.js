@@ -6,23 +6,27 @@ import OinkButton from "./OinkButton.png";
 function HogCardDetails() {
 
     
-    const [hogCard, setHogCard] = useState([]);
-    const {username, image, caption, likes}= hogCard;
-    const [oinkCount, setOinkCount] = useState(likes);
-    
+    const [hogCard, setHogCard] = useState({
+        username:"",
+        image: "",
+        likes:0,
+        caption: ""
+    });
 
     const {id} = useParams();
 
     useEffect(() => {
         fetch(`http://localhost:9292/posts/${id}`)
         .then(response => response.json())
-        .then(data => setHogCard(data))
+        .then(data => {
+            setHogCard({...data})
+        })
     },[id])
 
 
     const handleOinks = () => {
 
-        const updatedOinkCount = oinkCount + 1;
+        const updatedOinkCount = hogCard.likes + 1;
 
         const configObj = {
             method: "PATCH",
@@ -35,21 +39,22 @@ function HogCardDetails() {
 
         fetch(`http://localhost:9292/posts/${id}`, configObj)
         .then( r => r.json())
-        .then( () => {
-            setOinkCount(oinkCount + 1);
+        .then( (data) => {
+            setHogCard({...data})
         });
     }
 
     return (
         <div>
-        <div classname='Post'>
-            <h3>{username}</h3>
+        <div className='Post'>
+            <h3>{hogCard.username}</h3>
             <button onClick={handleOinks}><img className="Oink" src={OinkButton} alt="OinkButton"/></button>
             <h6>{hogCard.likes} OINKS</h6>
-            <img src={image} alt={username} />
-            <h5>{caption}</h5>
+            <img src={hogCard.image} alt={hogCard.username} />
+            <h5>{hogCard.caption}</h5>
         </div>
             <div>
+                <h3>Comments Section</h3>
                 
             </div>
         </div>

@@ -32,9 +32,6 @@ function App() {
 				<Route exact path = "/hog/:id">
 					<HogCardDetails />
 				</Route>
-				<Route path="/hog/:id">
-					<HogCardDetails />
-				</Route>
 			</Switch>
 		</div>
 	)
