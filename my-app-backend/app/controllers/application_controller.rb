@@ -12,7 +12,8 @@ class ApplicationController < Sinatra::Base
 
   get "/posts/:id" do
     post = Post.find(params[:id])
-    post.to_json
+    post.to_json(include: :comments)
+
   end
   #comments how?!?!
   # get '/posts/:id' do
