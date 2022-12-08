@@ -12,7 +12,8 @@ function HogComments({hogCard, addComment}){
             username: username,
             comment: comment
         }
-        fetch(`http://localhost:9292/posts/${id}`, {
+        //needs id added back here
+        fetch(`http://localhost:9292/posts/`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(newComment)

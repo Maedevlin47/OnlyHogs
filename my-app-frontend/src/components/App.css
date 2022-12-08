@@ -8,8 +8,8 @@
   width: 40%;
   width: calc(33% - 2rem);
   flex-basis: auto;
-  border: 3px solid #E3B093;
-  color: #E3CAAB;
+  border: 3px solid #38B6FF;
+  color: #38B6FF;
 }
 
 .card_container {
