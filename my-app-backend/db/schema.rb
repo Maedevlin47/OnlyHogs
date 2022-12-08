@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2022_12_06_161106) do
     t.string "caption"
     t.string "username"
     t.integer "likes"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

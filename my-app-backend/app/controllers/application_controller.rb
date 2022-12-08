@@ -24,8 +24,10 @@ class ApplicationController < Sinatra::Base
 #PATCH REQUESTS
 patch "/posts/:id" do
     # binding.pry
-    Post.find(params[:id])
-    Post.update(likes: params[:likes]).to_json
+    body = JSON.parse(request.body.read)
+    post = Post.find(params[:id])
+    post.update(likes: body["likes"])
+    post.to_json
 end
 
 #DELETE REQUESTS
