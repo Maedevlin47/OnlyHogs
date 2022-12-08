@@ -63,7 +63,7 @@ puts "Creating Posts"
 puts "Posts created successfully!"
 # Create Comments
 puts "Creating Comments"
-6.times do
+40.times do
     Comment.create(
         post_id: Post.all.sample.id,
         user_id: User.all.sample.id,
