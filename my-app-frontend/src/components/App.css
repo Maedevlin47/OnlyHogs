@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+/* NAV BAR */
+/* 
+.Logo{
+  
+} */
+
+/* HOME PAGE */
 .hog_card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0);
   transition: 0.3s;
@@ -34,10 +41,7 @@
   display: inline;
 }
 
-/* <!-- HTML !-->
-<button class="button-86" role="button">Button 86</button> */
-
-/* CSS */
+/* BUTTON STYLE */
 .button {
   all: unset;
   width: 100px;
@@ -104,6 +108,11 @@
   transition: 0s;
   transform: translate(0, 5%);
 }
+
+
+
+
+/* HOG CARD DETAILS */
 
 .detail_image {
   justify-content: center;

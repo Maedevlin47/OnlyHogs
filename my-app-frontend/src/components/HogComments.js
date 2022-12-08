@@ -40,19 +40,19 @@ export default HogComments;
 
 // const commentsArray= hogCard.comments.map((comment) => {
 
-// // return(
-// //     <div key={comment.id}>
-// //         <ul>{comment.comments}</ul>
-// //     </div>
+// return(
+//     <div key={comment.id}>
+//         <ul>{comment.comments}</ul>
+//     </div>
 
-// // )
-// // })
+// )
+// })
 
-// // return(
-// // <div>
-// //     <h4>COMMENT SECTION</h4>
-// //     {commentsArray}
-// // </div>
+// return(
+// <div>
+//     <h4>COMMENT SECTION</h4>
+//     {commentsArray}
+// </div>
 
 
 
