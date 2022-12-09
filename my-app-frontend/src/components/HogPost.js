@@ -23,12 +23,12 @@ function HogPost ({addHog}) {
     }
     return (
         <div className='new-hog-form'>
-            <h2>Post a Pig</h2>
+            <h2>NEW HOG</h2>
             <form onSubmit = {handleSubmit}>
-            <input type="text" name="username" placeholder="Username" value = {username} onChange ={(e) => setUsername(e.target.value)}/>
-            <input type="text" name="image" placeholder="Image" value = {image} onChange ={(e) => setImage(e.target.value)}/>
-            <input type="text" name="caption" placeholder="Caption" value = {caption} onChange ={(e) => setCaption(e.target.value)}/>
-            <button type="submit" value="Add Pig">Add Pig</button>
+                <input type="text" name="username" placeholder="Username" value = {username} onChange ={(e) => setUsername(e.target.value)}/>
+                <input type="text" name="image" placeholder="Image" value = {image} onChange ={(e) => setImage(e.target.value)}/>
+                <input type="text" name="caption" placeholder="Caption" value = {caption} onChange ={(e) => setCaption(e.target.value)}/>
+                <button type="submit" value="Add Pig" className="detail_button">ADD HOG</button>
             </form>
         </div>
         

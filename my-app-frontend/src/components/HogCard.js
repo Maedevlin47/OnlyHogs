@@ -17,10 +17,11 @@ function handleDelete () {
         <div className="hog_card">
             <h4>{hog.username}</h4>
             <Link to = {`hog/${hog.id}`}>
-                <img style={{height:"50px", width:"50px"}} src={hog.image} alt={hog.username} className = "hog_pic" />
+                <img src={hog.image} alt={hog.username} className = "hog_pic" />
             </Link>
             <h5>{hog.caption}</h5>
-            <button onClick={handleDelete}>DELETE</button>
+            <br />
+            <button onClick={handleDelete} className = "detail_button">DELETE</button>
         </div>
     )
 }

@@ -5,10 +5,14 @@ import {NavLink} from 'react-router-dom';
 function NavBar() {
 
     return(
-        <div>
-            <img className="Logo" src={OnlyHogsLogo} alt="OnlyHogs Logo"/>
-            <NavLink className="button" role="button" exact to ="/">HOME</NavLink>
-            <NavLink className="button" role="button" exact to ="/post">POST A HOG</NavLink>
+        <div className="nav_bar">  
+            <div>
+                <img src={OnlyHogsLogo} alt="OnlyHogs Logo" className = "logo" />
+            </div>
+            <div className="nav_item">
+                <NavLink className="button" role="button" exact to ="/">HOME</NavLink>
+                <NavLink className="button" role="button" exact to ="/post">POST A HOG</NavLink>
+            </div>
         </div>
     )
 }

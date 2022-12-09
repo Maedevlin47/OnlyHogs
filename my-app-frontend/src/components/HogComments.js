@@ -50,12 +50,12 @@ function HogComments({hogCard, addComment}){
                 <h4>COMMENT SECTION</h4>
                 {commentsArray}
             </div>
-            <div className='new-hog-form'>
+            <div className='comment-form'>
                 <h2>Add Comment</h2>
                 <form onSubmit = {handleSubmit}>
                 <input type="text" name="username" placeholder="Username" value = {username} onChange ={(e) => setUsername(e.target.value)}/>
-                <input type="text" name="comment" placeholder="comment" value = {comment} onChange ={(e) => setComment(e.target.value)}/>
-                <button type="submit" value="Add Comment">Add Comment</button>
+                <input type="text" name="comment" placeholder="Comment" value = {comment} onChange ={(e) => setComment(e.target.value)}/>
+                <button type="submit" value="Add Comment" className="detail_button">Add Comment</button>
                 </form>
             </div>
         </div>
