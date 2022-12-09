@@ -17,7 +17,13 @@ function HogCardDetails() {
         comments: []
     });
     
-    // const addComment = (newComment) => {setHogCard([...comments, newComment])};
+    const addComment = (newComment) => {
+        setHogCard( (prevHogCard)=>{
+            const newHogCard = {...prevHogCard}
+            newHogCard.comments.push(newComment)
+            return  newHogCard
+        })
+    };
 
     const {id} = useParams();
 
@@ -26,7 +32,6 @@ function HogCardDetails() {
         .then(response => response.json())
         .then(data => {
             setHogCard({...data})
-            // setHogComments({...data})
         })
     },[id])
     // console.log(hogCard)
@@ -52,6 +57,8 @@ function HogCardDetails() {
         });
     }
 
+    
+
     return (
         <div>
             <div className='Post'>
@@ -63,9 +70,15 @@ function HogCardDetails() {
                 <h3>{hogCard.caption}</h3>
             </div>
             <div>
-                <HogComments hogCard = {hogCard} />
+                <HogComments hogCard = {hogCard}  addComment = {addComment} />
             </div>
+            
         </div>
     )
 }
 export default HogCardDetails
+
+
+
+
+// addComment ={addComment}

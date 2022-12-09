@@ -22,18 +22,27 @@ class ApplicationController < Sinatra::Base
     Post.create(username: params[:username], image: params[:image], caption: params[:caption]).to_json
   end
 
+  post "/posts/:id" do
+    Comment.create(username: params[:username], comment: params[:comment], post_id: params[:post_id]).to_json
+  end
+
 #PATCH REQUESTS
 patch "/posts/:id" do
     # binding.pry
     body = JSON.parse(request.body.read)
     post = Post.find(params[:id])
     post.update(likes: body["likes"])
-    post.to_json
+    post.to_json(include: :comments)
 end
 
 #DELETE REQUESTS
 delete "/posts/:id" do 
-  Post.find(params[:id]).destroy.to_json
+  if Post.find(params[:id]).comments
+    Post.find(params[:id]).comments.destroy_all
+  end
+  Post.find(params[:id]).destroy
+  
+  {}.to_json
 end
 
   # def get_secret_key

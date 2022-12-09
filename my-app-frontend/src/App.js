@@ -11,21 +11,21 @@ function App() {
     const addHog = (newHog) => {setHogs([...hogs, newHog])};
 	
     
-
+	const [change, setChange] = useState(true)
 	const [hogs, setHogs] = useState([]);
 	
 	useEffect( () => {
 		fetch("http://localhost:9292/posts")
 		.then ( r => r.json() )
 		.then ( data => setHogs(data) )
-	}, [])
+	}, [change])
 
 	return (
 		<div className = 'App'>
 			<NavBar />
 			<Switch>
 				<Route exact path = "/">
-					<Home hogs = {hogs} />
+					<Home hogs = {hogs} setChange={setChange} />
 				</Route>
 				<Route exact path = "/post">
 					<HogPost addHog = {addHog} />

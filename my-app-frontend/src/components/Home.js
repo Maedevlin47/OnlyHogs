@@ -2,12 +2,12 @@ import {React } from 'react';
 import HogContainer from './HogContainer'
 
 
-function Home ({hogs}) {
+function Home ({hogs,setChange}) {
 
     
     return(
         <div>
-            <HogContainer hogs={hogs}/>
+            <HogContainer setChange={setChange} hogs={hogs}/>
         </div>
         
     )

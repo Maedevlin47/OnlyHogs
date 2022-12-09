@@ -6,26 +6,37 @@ function HogComments({hogCard, addComment}){
     const [username, setUsername] = useState("")
     const [comment, setComment] = useState("")
 
+    function mapComments (array) {
+        if (array) {
+            return array.map((comment, id) => {
 
-    const commentsArray= hogCard.comments.map((comment) => {
 
-return(
-    <div key={comment.id}>
-        <ul>{comment.comments}</ul>
-    </div>
+                return(
+                    <div key={id}>
+                        <ul>{comment.username}: {comment.comment}</ul>
+                    </div>
+            
+                )
+            })
+        }
+        else {
+            return (<></>)
+        }
+    }
 
-)
-})
+    const commentsArray= mapComments(hogCard.comments)
 
 
     const handleSubmit = (e) => {
         e.preventDefault()
         let newComment = {
             username: username,
-            comment: comment
+            comment: comment,
+            post_id: hogCard.id
+            
         }
         //needs id added back here
-        fetch(`http://localhost:9292/posts/`, {
+        fetch(`http://localhost:9292/posts/${hogCard.id}`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(newComment)
